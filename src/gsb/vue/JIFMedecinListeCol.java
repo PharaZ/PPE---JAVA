@@ -92,7 +92,6 @@ public class JIFMedecinListeCol extends JInternalFrame implements ActionListener
 	/* (non-Javadoc)
 	 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
 	 */
-	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		Object source = arg0.getSource();
    		if (source == JBafficherFiche){

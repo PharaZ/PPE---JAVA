@@ -88,7 +88,6 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
-	@Override
 	public void actionPerformed(ActionEvent evt) {
 		// TODO Raccord de m�thode auto-g�n�r�
 		if (evt.getSource() instanceof JMenuItem) {
