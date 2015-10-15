@@ -4,7 +4,7 @@
  * TODO Pour changer le mod�le de ce fichier g�n�r�, allez � :
  * Fen�tre - Pr�f�rences - Java - Style de code - Mod�les de code
  */
-package gsb.modele;
+package gsb.vue;
 
 
 

@@ -4,7 +4,7 @@
  * TODO Pour changer le mod�le de ce fichier g�n�r�, allez � :
  * Fen�tre - Pr�f�rences - Java - Style de code - Mod�les de code
  */
-package gsb.modele;
+package gsb.vue;
 
 import gsb.modele.Medecin;
 import gsb.modele.dao.MedecinDao;
@@ -14,6 +14,8 @@ import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+
+
 
 
 import javax.swing.JButton;
