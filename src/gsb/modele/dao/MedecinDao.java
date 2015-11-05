@@ -6,7 +6,6 @@
  */
 package gsb.modele.dao;
 
-import gsb.modele.Localite;
 import gsb.modele.Medecin;
 
 import java.sql.ResultSet;
@@ -26,12 +25,10 @@ public class MedecinDao {
 	
 	public static Medecin rechercher(String codeMedecin){
 		Medecin unMedecin=null;
-		Localite uneLocalite= null;
 		ResultSet reqSelection = ConnexionMySql.execReqSelection("select * from MEDECIN where CODEMED ='"+codeMedecin+"'");
 		try {
 			if (reqSelection.next()) {
-				uneLocalite = LocaliteDao.rechercher(reqSelection.getString(5));
-				unMedecin = new Medecin(reqSelection.getString(1), reqSelection.getString(2), reqSelection.getString(3), reqSelection.getString(4), uneLocalite, reqSelection.getString(6), reqSelection.getString(7), reqSelection.getString(8) );	
+				unMedecin = new Medecin(reqSelection.getString(1), reqSelection.getString(2), reqSelection.getString(3), reqSelection.getString(4), reqSelection.getString(5), reqSelection.getString(6), reqSelection.getString(7), reqSelection.getString(8), reqSelection.getString(9));	
 			};
 			}
 		catch(Exception e) {

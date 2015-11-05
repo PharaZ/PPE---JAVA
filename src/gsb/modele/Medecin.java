@@ -17,10 +17,11 @@ public class Medecin {
 	protected String nom;
 	protected String prenom;
 	protected String adresse;
-	protected Localite laLocalite;
 	protected String telephone;
 	protected String potentiel;
 	protected String specialite;
+	protected String ville;
+	protected String cp;
 	/**
 	 * @param codeMed
 	 * @param nom
@@ -32,16 +33,41 @@ public class Medecin {
 	 * @param specialite
 	 */
 	public Medecin(String codeMed, String nom, String prenom,
-			String adresse, Localite laLocalite, String telephone,
-			String potentiel, String specialite) {
+			String adresse, String telephone,
+			String potentiel, String specialite, String ville, String cp) {
 		this.codeMed = codeMed;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.adresse = adresse;
-		this.laLocalite = laLocalite;
 		this.telephone = telephone;
 		this.potentiel = potentiel;
 		this.specialite = specialite;
+		this.ville = ville;
+		this.cp = cp;
+	}
+	/**
+	 * @return the ville
+	 */
+	public String getVille() {
+		return ville;
+	}
+	/**
+	 * @param ville the ville to set
+	 */
+	public void setVille(String ville) {
+		this.ville = ville;
+	}
+	/**
+	 * @return the cp
+	 */
+	public String getCp() {
+		return cp;
+	}
+	/**
+	 * @param cp the cp to set
+	 */
+	public void setCp(String cp) {
+		this.cp = cp;
 	}
 	/**
 	 * @return Renvoie codeMed.
@@ -90,18 +116,6 @@ public class Medecin {
 	 */
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
-	}
-	/**
-	 * @return Renvoie laLocalite.
-	 */
-	public Localite getLaLocalite() {
-		return laLocalite;
-	}
-	/**
-	 * @param laLocalite laLocalite � d�finir.
-	 */
-	public void setLaLocalite(Localite laLocalite) {
-		this.laLocalite = laLocalite;
 	}
 	/**
 	 * @return Renvoie telephone.
