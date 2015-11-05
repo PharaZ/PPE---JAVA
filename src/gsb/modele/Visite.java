@@ -3,7 +3,6 @@
  */
 package gsb.modele;
 
-import java.util.Date;
 
 /**
  * @author Guillaume
@@ -11,7 +10,7 @@ import java.util.Date;
  */
 public class Visite {
 	protected String reference;
-	protected Date date;
+	protected String date;
 	protected String commentaire;
 	protected Medecin unMedecin;
 	protected Visiteur unVisiteur;
@@ -22,7 +21,7 @@ public class Visite {
 	 * @param unMedecin
 	 * @param unVisiteur
 	 */
-	public Visite(String reference, Date date, String commentaire,
+	public Visite(String reference, String date, String commentaire,
 			Medecin unMedecin, Visiteur unVisiteur) {
 		super();
 		this.reference = reference;
@@ -46,13 +45,13 @@ public class Visite {
 	/**
 	 * @return the date
 	 */
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 	/**
 	 * @param date the date to set
 	 */
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	/**

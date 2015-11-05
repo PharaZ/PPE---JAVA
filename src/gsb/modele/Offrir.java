@@ -8,30 +8,15 @@ package gsb.modele;
  *
  */
 public class Offrir {
-	   protected int qteOfferte;
 	   protected Medicament unMedicament;
-	   protected Visite uneVisite;
+	   protected int qteOfferte;
 	/**
-	 * @param qteOfferte
 	 * @param unMedicament
-	 * @param uneVisite
+	 * @param qteOfferte
 	 */
-	public Offrir(int qteOfferte, Medicament unMedicament, Visite uneVisite) {
+	public Offrir(Medicament unMedicament, int qteOfferte) {
 		super();
-		this.qteOfferte = qteOfferte;
 		this.unMedicament = unMedicament;
-		this.uneVisite = uneVisite;
-	}
-	/**
-	 * @return the qteOfferte
-	 */
-	public int getQteOfferte() {
-		return qteOfferte;
-	}
-	/**
-	 * @param qteOfferte the qteOfferte to set
-	 */
-	public void setQteOfferte(int qteOfferte) {
 		this.qteOfferte = qteOfferte;
 	}
 	/**
@@ -47,18 +32,17 @@ public class Offrir {
 		this.unMedicament = unMedicament;
 	}
 	/**
-	 * @return the uneVisite
+	 * @return the qteOfferte
 	 */
-	public Visite getUneVisite() {
-		return uneVisite;
+	public int getQteOfferte() {
+		return qteOfferte;
 	}
 	/**
-	 * @param uneVisite the uneVisite to set
+	 * @param qteOfferte the qteOfferte to set
 	 */
-	public void setUneVisite(Visite uneVisite) {
-		this.uneVisite = uneVisite;
+	public void setQteOfferte(int qteOfferte) {
+		this.qteOfferte = qteOfferte;
 	}
 	   
 	   
-	}
-
+}
