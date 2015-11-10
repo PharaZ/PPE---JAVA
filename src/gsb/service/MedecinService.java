@@ -1,8 +1,8 @@
 /*
- * Créé le 23 févr. 2015
+ * Crï¿½ï¿½ le 23 fï¿½vr. 2015
  *
- * TODO Pour changer le modèle de ce fichier généré, allez à :
- * Fenêtre - Préférences - Java - Style de code - Modèles de code
+ * TODO Pour changer le modï¿½le de ce fichier gï¿½nï¿½rï¿½, allez ï¿½ :
+ * Fenï¿½tre - Prï¿½fï¿½rences - Java - Style de code - Modï¿½les de code
  */
 package gsb.service;
 
@@ -11,9 +11,9 @@ import gsb.modele.dao.MedecinDao;
 
 /**
  * @author Isabelle
- * 23 févr. 2015
- * TODO Pour changer le modèle de ce commentaire de type généré, allez à :
- * Fenêtre - Préférences - Java - Style de code - Modèles de code
+ * 23 fï¿½vr. 2015
+ * TODO Pour changer le modï¿½le de ce commentaire de type gï¿½nï¿½rï¿½, allez ï¿½ :
+ * Fenï¿½tre - Prï¿½fï¿½rences - Java - Style de code - Modï¿½les de code
  */
 public class MedecinService {
 	
@@ -21,7 +21,7 @@ public class MedecinService {
 		Medecin unMedecin = null;
 		try{
 		if (unCodeMedecin==null) {
-            throw new Exception("Donnée obligatoire : code");
+            throw new Exception("Donnï¿½e obligatoire : code");
         }
 		unMedecin = MedecinDao.rechercher(unCodeMedecin);
 		}
@@ -30,5 +30,7 @@ public class MedecinService {
 		}
 		return unMedecin;
 	}
+	
+	public static Medecin retournerCollectionMedecin
 	
 }
