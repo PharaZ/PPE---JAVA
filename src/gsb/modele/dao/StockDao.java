@@ -67,4 +67,4 @@ public class StockDao {
 		return diccoDesStocks;
 	}
 }
-
+qsdq
