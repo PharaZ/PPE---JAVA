@@ -62,5 +62,28 @@ public class MedicamentDao {
 		}
 		return diccoDesMedicaments;
 	}
+	
+	public static int creer(Medicament unMedicament){
+		int result = 0;
+		String requeteInsertion;
+		String depotLegal = unMedicament.getDepotLegal();
+		String nomCommercial = unMedicament.getNomCommercial();
+		String composition = unMedicament.getComposition();
+		String effets = unMedicament.getEffets();
+		String contreIndication = unMedicament.getContreIndication();
+		Float prixEchantillon = unMedicament.getPrixEchantillon();
+		String codeFamille = unMedicament.getCodeFamille();
+		String libelleFamille = unMedicament.getLibelleFamille();
+		
+		requeteInsertion = "insert into Medicament values('"+depotLegal+"','"+nomCommercial+"','"+composition+"','"+effets+"','"+contreIndication+"','"+prixEchantillon+"','"+codeFamille+"')";
+		try{
+			result = ConnexionMySql.execReqMaj(requeteInsertion);
+		}
+		catch(Exception e){
+			System.out.println("echec insertion MEDICAMENT");
+		}
+		ConnexionMySql.fermerConnexionBd();
+		return result;
+	}
 
 }

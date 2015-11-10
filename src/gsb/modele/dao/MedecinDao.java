@@ -15,6 +15,7 @@ import java.util.HashMap;
 
 
 
+
 /**
  * @author Isabelle
  * 22 févr. 2015
@@ -69,6 +70,53 @@ public class MedecinDao {
 			System.out.println("erreur retournerDiccoDesMedecins()");
 		}
 		return diccoDesMedecins;
+	}
+	
+	public static int creer(Medecin unMedecin){
+		int result = 0;
+		String requeteInsertion;
+		String codeMed= unMedecin.getCodeMed();
+		String nom = unMedecin.getNom();
+		String prenom = unMedecin.getPrenom();
+		String adresse =  unMedecin.getAdresse();
+		String telephone = unMedecin.getTelephone();
+		String potentiel =  unMedecin.getPotentiel();
+		String specialite = unMedecin.getSpecialite();
+		String ville = unMedecin.getVille();
+		String cp = unMedecin.getCp();
+		requeteInsertion = "insert into MEDECIN values('"+codeMed+"','"+nom+"','"+prenom+"','"+adresse+"','"+telephone+"','"+potentiel+"','"+specialite+"','"+ville+"','"+cp+"')";
+		try{
+			result = ConnexionMySql.execReqMaj(requeteInsertion);
+		}
+		catch(Exception e){
+			System.out.println("echec insertion Medecin");
+		}
+		ConnexionMySql.fermerConnexionBd();
+		return result;
+	}
+	
+	public static int supprimer(String codeMed){
+		String requeteSuppression = "delete from MEDECIN where CODEMED='"+codeMed+"'";
+		int result = ConnexionMySql.execReqMaj(requeteSuppression);
+		ConnexionMySql.fermerConnexionBd();
+		return result;	
+	}
+	
+	public static int modifier(Medecin unMedecin){
+		String requeteModification;
+		String codeMed= unMedecin.getCodeMed();
+		String nom = unMedecin.getNom();
+		String prenom = unMedecin.getPrenom();
+		String adresse =  unMedecin.getAdresse();
+		String telephone = unMedecin.getTelephone();
+		String potentiel =  unMedecin.getPotentiel();
+		String specialite = unMedecin.getSpecialite();
+		String ville = unMedecin.getVille();
+		String cp = unMedecin.getCp();
+		requeteModification = "update MEDECIN set NOM='"+nom+"',PRENOM='"+prenom+"',ADRESSE='"+adresse+"',TELEPHONE='"+telephone+"',POTENTIEL='"+potentiel+"',SPECIALITE='"+specialite+"',VILLE='"+ville+"',CP='"+cp+"' where CODEMED='"+codeMed+"'";
+		int result = ConnexionMySql.execReqMaj(requeteModification);
+		ConnexionMySql.fermerConnexionBd();
+		return result;
 	}
 
 }
