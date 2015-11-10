@@ -58,7 +58,5 @@ public class Stock {
 	public void setUnMedicament(Medicament unMedicament) {
 		this.unMedicament = unMedicament;
 	}
-	 qsdfqsdfqsdfdsq  qdfqsdfsdfqsdqf
-	   
 	}
 

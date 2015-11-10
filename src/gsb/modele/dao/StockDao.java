@@ -28,7 +28,7 @@ public class StockDao {
 			};
 			}
 		catch(Exception e) {
-			System.out.println("erreur reqSelection.next() pour la requête - select * from STOCK where DEPOTLEGAl ='"+depotLegal+"'");
+			System.out.println("erreur reqSelection.next() pour la requï¿½te - select * from STOCK where DEPOTLEGAl ='"+depotLegal+"'");
 			e.printStackTrace();
 			}
 		ConnexionMySql.fermerConnexionBd();
@@ -67,4 +67,3 @@ public class StockDao {
 		return diccoDesStocks;
 	}
 }
-qsdq
