@@ -15,7 +15,7 @@ public class Medicament {
 	   protected String contreIndication;
 	   protected float prixEchantillon;
 	   protected String codeFamille;
-	   protected String libellefamille;
+	   protected String libelleFamille;
 	/**
 	 * @param depotLegal
 	 * @param nomCommercial
@@ -24,11 +24,11 @@ public class Medicament {
 	 * @param contreIndication
 	 * @param prixEchantillon
 	 * @param codeFamille
-	 * @param libellefamille
+	 * @param libelleFamille
 	 */
 	public Medicament(String depotLegal, String nomCommercial,
 			String composition, String effets, String contreIndication,
-			float prixEchantillon, String codeFamille, String libellefamille) {
+			float prixEchantillon, String codeFamille, String libelleFamille) {
 		super();
 		this.depotLegal = depotLegal;
 		this.nomCommercial = nomCommercial;
@@ -37,7 +37,7 @@ public class Medicament {
 		this.contreIndication = contreIndication;
 		this.prixEchantillon = prixEchantillon;
 		this.codeFamille = codeFamille;
-		this.libellefamille = libellefamille;
+		this.libelleFamille = libelleFamille;
 	}
 	/**
 	 * @return the depotLegal
@@ -126,14 +126,14 @@ public class Medicament {
 	/**
 	 * @return the libellefamille
 	 */
-	public String getLibellefamille() {
-		return libellefamille;
+	public String getLibelleFamille() {
+		return libelleFamille;
 	}
 	/**
 	 * @param libellefamille the libellefamille to set
 	 */
-	public void setLibellefamille(String libellefamille) {
-		this.libellefamille = libellefamille;
+	public void setLibellefamille(String libelleFamille) {
+		this.libelleFamille = libelleFamille;
 	}
 	   
 	   

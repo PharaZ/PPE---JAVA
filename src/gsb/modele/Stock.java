@@ -7,7 +7,7 @@ package gsb.modele;
  * @author Guillaume
  *
  */
-public class Stocker {
+public class Stock {
 	   protected int qteStock;
 	   public Visiteur  unVisiteur;
 	   public Medicament unMedicament;
@@ -16,7 +16,7 @@ public class Stocker {
 	 * @param unVisiteur
 	 * @param unMedicament
 	 */
-	public Stocker(int qteStock, Visiteur unVisiteur, Medicament unMedicament) {
+	public Stock(int qteStock, Visiteur unVisiteur, Medicament unMedicament) {
 		super();
 		this.qteStock = qteStock;
 		this.unVisiteur = unVisiteur;
@@ -58,7 +58,7 @@ public class Stocker {
 	public void setUnMedicament(Medicament unMedicament) {
 		this.unMedicament = unMedicament;
 	}
-	   
+	 qsdfqsdfqsdfdsq  qdfqsdfsdfqsdqf
 	   
 	}
 
