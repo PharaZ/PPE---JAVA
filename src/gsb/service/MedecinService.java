@@ -6,6 +6,9 @@
  */
 package gsb.service;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 import gsb.modele.Medecin;
 import gsb.modele.dao.MedecinDao;
 
@@ -30,7 +33,5 @@ public class MedecinService {
 		}
 		return unMedecin;
 	}
-	
-	public static Medecin retournerCollectionMedecin
-	
+		
 }
