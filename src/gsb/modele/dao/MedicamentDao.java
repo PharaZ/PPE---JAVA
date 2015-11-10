@@ -4,7 +4,6 @@
 package gsb.modele.dao;
 
 import gsb.modele.Medicament;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -24,7 +23,7 @@ public class MedicamentDao {
 			};
 			}
 		catch(Exception e) {
-			System.out.println("erreur reqSelection.next() pour la requête - select * from MEDICAMENT where DEPOTLEGAl ='"+depotLegal+"'");
+			System.out.println("erreur reqSelection.next() pour la requï¿½te - select * from MEDICAMENT where DEPOTLEGAl ='"+depotLegal+"'");
 			e.printStackTrace();
 			}
 		ConnexionMySql.fermerConnexionBd();
