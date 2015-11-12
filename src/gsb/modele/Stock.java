@@ -8,7 +8,7 @@ package gsb.modele;
  *
  */
 public class Stock {
-	   protected int qteStock;
+	   public int qteStock;
 	   public Visiteur  unVisiteur;
 	   public Medicament unMedicament;
 	/**
