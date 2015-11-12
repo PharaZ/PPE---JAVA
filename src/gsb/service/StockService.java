@@ -30,4 +30,3 @@ public class StockService {
 	            throw new Exception("Donn�es obligatoires : depot legal, matricule visiteur, quantite stock");
 
 
-}
