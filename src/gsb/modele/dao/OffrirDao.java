@@ -64,5 +64,38 @@ public class OffrirDao {
 		}
 		return diccoDesOffres;
 	}
+	
+	public static int creer(Offrir uneOffre){
+		int result = 0;
+		String requeteInsertion;
+		Medicament unMedicament= uneOffre.getUnMedicament();
+		int qteOfferte = uneOffre.getQteOfferte();
+		requeteInsertion = "insert into OFFRIR values('"+unMedicament+"','"+qteOfferte+"'";
+		try{
+			result = ConnexionMySql.execReqMaj(requeteInsertion);
+		}
+		catch(Exception e){
+			System.out.println("echec insertion Offrir");
+		}
+		ConnexionMySql.fermerConnexionBd();
+		return result;
+	}
+	
+	public static int supprimer(String depotLegal){
+		String requeteSuppression = "delete from OFFRIR where DEPOTLEGAL='"+depotLegal+"'";
+		int result = ConnexionMySql.execReqMaj(requeteSuppression);
+		ConnexionMySql.fermerConnexionBd();
+		return result;	
+	}
+	
+	public static int modifier(Offrir uneOffre){
+		String requeteModification;
+		Medicament unMedicament= uneOffre.getUnMedicament();
+		int qteOfferte = uneOffre.getQteOfferte();
+		requeteModification = "update OFFRIR set QTEOFFERTE='"+qteOfferte+"' where DEPOTLEGAL='"+unMedicament+"'";
+		int result = ConnexionMySql.execReqMaj(requeteModification);
+		ConnexionMySql.fermerConnexionBd();
+		return result;
+	}
 
 }

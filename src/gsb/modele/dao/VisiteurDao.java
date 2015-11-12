@@ -6,6 +6,7 @@ package gsb.modele.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 
 import gsb.modele.Visiteur;
@@ -62,6 +63,61 @@ public class VisiteurDao {
 			System.out.println("erreur retournerDiccoDesVisiteurs()");
 		}
 		return diccoDesVisiteurs;
+	}
+	
+	public static int creer(Visiteur unVisiteur){
+		int result = 0;
+		String requeteInsertion;
+		String matricule= unVisiteur.getMatricule();
+		String nom = unVisiteur.getNom();
+		String prenom = unVisiteur.getPrenom();
+		String login =  unVisiteur.getLogin();
+		String mdp = unVisiteur.getMdp();
+		String adresse =  unVisiteur.getAdresse();
+		String cp = unVisiteur.getCp();
+		String ville = unVisiteur.getVille();
+		String telephone = unVisiteur.getTelephone();
+		Date dateEntree= unVisiteur.getDateEntree();
+		int prime= unVisiteur.getPrime();
+		String codeUnite= unVisiteur.getCodeUnite();
+		String nomUnite= unVisiteur.getNomUnite();
+		requeteInsertion = "insert into VISITEUR values('"+matricule+"','"+nom+"','"+prenom+"','"+login+"','"+adresse+"','"+cp+"','"+ville+"','"+telephone+"','"+dateEntree+"','"+prime+"','"+codeUnite+"','"+nomUnite+"')";
+		try{
+			result = ConnexionMySql.execReqMaj(requeteInsertion);
+		}
+		catch(Exception e){
+			System.out.println("echec insertion Visiteur");
+		}
+		ConnexionMySql.fermerConnexionBd();
+		return result;
+	}
+	
+	public static int supprimer(String matricule){
+		String requeteSuppression = "delete from VISITEUR where MATRICULE='"+matricule+"'";
+		int result = ConnexionMySql.execReqMaj(requeteSuppression);
+		ConnexionMySql.fermerConnexionBd();
+		return result;	
+	}
+	
+	public static int modifier(Visiteur unVisiteur){
+		String requeteModification;
+		String matricule= unVisiteur.getMatricule();
+		String nom = unVisiteur.getNom();
+		String prenom = unVisiteur.getPrenom();
+		String login =  unVisiteur.getLogin();
+		String mdp = unVisiteur.getMdp();
+		String adresse =  unVisiteur.getAdresse();
+		String cp = unVisiteur.getCp();
+		String ville = unVisiteur.getVille();
+		String telephone = unVisiteur.getTelephone();
+		Date dateEntree= unVisiteur.getDateEntree();
+		int prime= unVisiteur.getPrime();
+		String codeUnite= unVisiteur.getCodeUnite();
+		String nomUnite= unVisiteur.getNomUnite();
+		requeteModification = "update VISITEUR set NOM='"+nom+"',PRENOM='"+prenom+"',LOGIN='"+login+"',MDP='"+mdp+"',ADRESSE='"+adresse+"',CODEPOSTAL='"+cp+"',VILLE='"+ville+"',TELEPHONE='"+telephone+"',DATEENTREE='"+dateEntree+"',PRIME='"+prime+"',CODEUNIT='"+codeUnite+"',NOMUNITE='"+nomUnite+"' where MATRICULE='"+matricule+"'";
+		int result = ConnexionMySql.execReqMaj(requeteModification);
+		ConnexionMySql.fermerConnexionBd();
+		return result;
 	}
 
 }

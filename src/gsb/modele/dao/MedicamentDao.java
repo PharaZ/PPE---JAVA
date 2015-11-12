@@ -74,7 +74,7 @@ public class MedicamentDao {
 		String codeFamille = unMedicament.getCodeFamille();
 		String libelleFamille = unMedicament.getLibelleFamille();
 		
-		requeteInsertion = "insert into Medicament values('"+depotLegal+"','"+nomCommercial+"','"+composition+"','"+effets+"','"+contreIndication+"','"+prixEchantillon+"','"+codeFamille+"')";
+		requeteInsertion = "insert into Medicament values('"+depotLegal+"','"+nomCommercial+"','"+composition+"','"+effets+"','"+contreIndication+"','"+prixEchantillon+"','"+codeFamille+"','"+libelleFamille+"')";
 		try{
 			result = ConnexionMySql.execReqMaj(requeteInsertion);
 		}
@@ -85,4 +85,26 @@ public class MedicamentDao {
 		return result;
 	}
 
+	public static int supprimer(String depotLegal){
+		String requeteSuppression = "delete from MEDICAMENT where DEPOTLEGAL='"+depotLegal+"'";
+		int result = ConnexionMySql.execReqMaj(requeteSuppression);
+		ConnexionMySql.fermerConnexionBd();
+		return result;	
+	}
+	
+	public static int modifier(Medicament unMedicament){
+		String requeteModification;
+		String depotLegal= unMedicament.getDepotLegal();
+		String nomCommercial = unMedicament.getNomCommercial();
+		String composition = unMedicament.getComposition();
+		String effets =  unMedicament.getEffets();
+		String contreIndication = unMedicament.getContreIndication();
+		float prixEchantillon =  unMedicament.getPrixEchantillon();
+		String codeFamille = unMedicament.getCodeFamille();
+		String libelleFamille = unMedicament.getLibelleFamille();
+		requeteModification = "update MEDICAMENT set NOMCOMMERCIAL='"+nomCommercial+"',COMPOSITION='"+composition+"',EFFETS='"+effets+"',CONTREINDICATION='"+contreIndication+"',PRIXECHANTILLON='"+prixEchantillon+"',CODEFAMILLE='"+codeFamille+"',LIBELLEFAMILLE='"+libelleFamille+"' where DEPOTLEGAL='"+depotLegal+"'";
+		int result = ConnexionMySql.execReqMaj(requeteModification);
+		ConnexionMySql.fermerConnexionBd();
+		return result;
+	}
 }

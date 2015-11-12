@@ -79,12 +79,13 @@ public class MedecinDao {
 		String nom = unMedecin.getNom();
 		String prenom = unMedecin.getPrenom();
 		String adresse =  unMedecin.getAdresse();
+		String cp = unMedecin.getCp();
+		String ville = unMedecin.getVille();
 		String telephone = unMedecin.getTelephone();
 		String potentiel =  unMedecin.getPotentiel();
 		String specialite = unMedecin.getSpecialite();
-		String ville = unMedecin.getVille();
-		String cp = unMedecin.getCp();
-		requeteInsertion = "insert into MEDECIN values('"+codeMed+"','"+nom+"','"+prenom+"','"+adresse+"','"+telephone+"','"+potentiel+"','"+specialite+"','"+ville+"','"+cp+"')";
+		
+		requeteInsertion = "insert into MEDECIN values('"+codeMed+"','"+nom+"','"+prenom+"','"+adresse+"','"+cp+"','"+ville+"','"+telephone+"','"+potentiel+"','"+specialite+"')";
 		try{
 			result = ConnexionMySql.execReqMaj(requeteInsertion);
 		}
@@ -108,12 +109,13 @@ public class MedecinDao {
 		String nom = unMedecin.getNom();
 		String prenom = unMedecin.getPrenom();
 		String adresse =  unMedecin.getAdresse();
+		String ville = unMedecin.getVille();
+		String cp = unMedecin.getCp();
 		String telephone = unMedecin.getTelephone();
 		String potentiel =  unMedecin.getPotentiel();
 		String specialite = unMedecin.getSpecialite();
-		String ville = unMedecin.getVille();
-		String cp = unMedecin.getCp();
-		requeteModification = "update MEDECIN set NOM='"+nom+"',PRENOM='"+prenom+"',ADRESSE='"+adresse+"',TELEPHONE='"+telephone+"',POTENTIEL='"+potentiel+"',SPECIALITE='"+specialite+"',VILLE='"+ville+"',CP='"+cp+"' where CODEMED='"+codeMed+"'";
+		
+		requeteModification = "update MEDECIN set NOM='"+nom+"',PRENOM='"+prenom+"',ADRESSE='"+adresse+"',CODEPOSTAL='"+cp+"',VILLE='"+ville+"',TELEPHONE='"+telephone+"',POTENTIEL='"+potentiel+"',SPECIALITE='"+specialite+"' where CODEMED='"+codeMed+"'";
 		int result = ConnexionMySql.execReqMaj(requeteModification);
 		ConnexionMySql.fermerConnexionBd();
 		return result;

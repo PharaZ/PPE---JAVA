@@ -66,4 +66,39 @@ public class StockDao {
 		}
 		return diccoDesStocks;
 	}
+	
+	public static int creer(Stock unStock){
+		int result = 0;
+		String requeteInsertion;
+		int qteStock = unStock.getQteStock();
+		Visiteur unVisiteur = unStock.getUnVisiteur();
+		Medicament unMedicament = unStock.getUnMedicament();
+		requeteInsertion = "insert into STOCK values('"+qteStock+"','"+unVisiteur+"','"+unMedicament+"'";
+		try{
+			result = ConnexionMySql.execReqMaj(requeteInsertion);
+		}
+		catch(Exception e){
+			System.out.println("echec insertion Stock");
+		}
+		ConnexionMySql.fermerConnexionBd();
+		return result;
+	}
+	
+	public static int supprimer(String depotLegal){
+		String requeteSuppression = "delete from STOCK where DEPOTLEGAL='"+depotLegal+"'";
+		int result = ConnexionMySql.execReqMaj(requeteSuppression);
+		ConnexionMySql.fermerConnexionBd();
+		return result;	
+	}
+	
+	public static int modifier(Stock unStock){
+		String requeteModification;
+		int qteStock = unStock.getQteStock();
+		Visiteur unVisiteur = unStock.getUnVisiteur();
+		Medicament unMedicament = unStock.getUnMedicament();
+		requeteModification = "update STOCK set QTESTOCK='"+qteStock+"',MATRICULEVIST='"+unVisiteur+"' where DEPOTLEGAL='"+unMedicament+"'";
+		int result = ConnexionMySql.execReqMaj(requeteModification);
+		ConnexionMySql.fermerConnexionBd();
+		return result;
+	}
 }
