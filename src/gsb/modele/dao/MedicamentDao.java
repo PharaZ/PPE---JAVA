@@ -107,4 +107,21 @@ public class MedicamentDao {
 		ConnexionMySql.fermerConnexionBd();
 		return result;
 	}
+	
+	//Affichage de tous les medicaments
+	public static ArrayList<Medicament> retournerTousLesMedicaments(){
+		ArrayList<Medicament> collectionDesMedicaments = new ArrayList<Medicament>();
+		ResultSet reqSelection = ConnexionMySql.execReqSelection("SELECT DEPOTLEGAL,NOMCOMMERCIAL,CODEFAMILLE FROM MEDICAMENT");
+		try{
+		while (reqSelection.next()) {
+			String depotLegal = reqSelection.getString(1);
+		    collectionDesMedicaments.add(MedicamentDao.rechercher(depotLegal));
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("erreur retournerTousLesMedicaments()");
+		}
+		return collectionDesMedicaments;
+	}
 }
