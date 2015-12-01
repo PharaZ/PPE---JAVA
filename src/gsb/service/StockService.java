@@ -30,10 +30,6 @@ public class StockService {
 	        if (unMedicament==null || unVisiteur == null || qteStock == 0) {
 	            throw new Exception("Donn�es obligatoires : depot legal, matricule visiteur, quantite stock");
 	        }
-	        if (StockDao.rechercher() != null) {
-	            // Si la base de donn�e contient d�j� un client ayant ce code on envoie une exception
-	            throw new Exception("Un stock avec le depot legal " + unMedicament  + " existe d�j�");
-	        }
 	        unStock = new Stock(qteStock, unVisiteur, unMedicament);
 	        resultat = StockDao.creer(unStock);
 		}
