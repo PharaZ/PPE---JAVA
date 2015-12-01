@@ -115,8 +115,15 @@ public class MedicamentDao {
 		try{
 		while (reqSelection.next()) {
 			String depotLegal = reqSelection.getString(1);
+			//String nomCommercial = reqSelection.getString(2);
+			//String codeFamille = reqSelection.getString(3);
 		    collectionDesMedicaments.add(MedicamentDao.rechercher(depotLegal));
+		    for (Medicament unMedicament : collectionDesMedicaments){ //Pour afficher toute ta liste
+		    	System.out.print(unMedicament.getDepotLegal());
+		    	System.out.print(unMedicament.getNomCommercial());
+		    	System.out.print(unMedicament.getCodeFamille());
 			}
+		}
 		}
 		catch (SQLException e) {
 			e.printStackTrace();
