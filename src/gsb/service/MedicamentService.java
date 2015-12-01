@@ -20,6 +20,5 @@ public class MedicamentService {
 		return unMedicament;
 	}
 	
-	1
 	
 }
