@@ -81,7 +81,7 @@ public class VisiteurDao {
 		int prime= unVisiteur.getPrime();
 		String codeUnite= unVisiteur.getCodeUnite();
 		String nomUnite= unVisiteur.getNomUnite();
-		requeteInsertion = "insert into VISITEUR values('"+matricule+"','"+nom+"','"+prenom+"','"+login+"','"+adresse+"','"+cp+"','"+ville+"','"+telephone+"','"+dateEntree+"','"+prime+"','"+codeUnite+"','"+nomUnite+"')";
+		requeteInsertion = "insert into VISITEUR values('"+matricule+"','"+nom+"','"+prenom+"','"+login+"','"+mdp+"','"+adresse+"','"+cp+"','"+ville+"','"+telephone+"','"+dateEntree+"','"+prime+"','"+codeUnite+"','"+nomUnite+"')";
 		try{
 			result = ConnexionMySql.execReqMaj(requeteInsertion);
 		}
