@@ -67,10 +67,10 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 		
 		//Ajout d'une barre de menu stock a la fenetre
 		mStock = new JMenu("Stock");
-		JMenuItem mU1 = new JMenuItem("Consultation Stock");
+		JMenuItem mU1 = new JMenuItem("Ajout Stock");
 		mU1.addActionListener(this); // installation d'un �couteur d'action
 		mStock.add(mU1);
-		JMenuItem mU2 = new JMenuItem("Ajout Stock");
+		JMenuItem mU2 = new JMenuItem("Consultation Stock");
 		mU2.addActionListener(this);
 		mStock.add(mU2);
 		
@@ -99,6 +99,7 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
+	//Permet de d'ouvrir la fenetre que l'on souhaite avoir
 	public void actionPerformed(ActionEvent evt) {
 		// TODO Raccord de m�thode auto-g�n�r�
 		if (evt.getSource() instanceof JMenuItem) {
@@ -110,6 +111,19 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 
 			} else if (ChoixOption.equals("Liste Medecins")) {
 				ouvrirFenetre(new JIFMedecinListeCol(this));
+			}
+
+		}
+		// TODO Raccord de m�thode auto-g�n�r�
+		if (evt.getSource() instanceof JMenuItem) {
+			String ChoixOption = evt.getActionCommand();
+
+			if (ChoixOption.equals("Ajout Stock")) {
+				// Creation d'une sous-fen�tre
+				ouvrirFenetre(new JIFAjoutStock());
+
+			} else if (ChoixOption.equals("Consultation Stock")) {
+				ouvrirFenetre(new JIFListeStock(this));
 			}
 
 		}

@@ -3,6 +3,8 @@
  */
 package gsb.modele;
 
+import java.util.ArrayList;
+
 /**
  * @author Guillaume
  *
@@ -11,6 +13,7 @@ public class Stock {
 	   public int qteStock;
 	   public Visiteur  unVisiteur;
 	   public Medicament unMedicament;
+	   public ArrayList<Stock> lesStock;
 	/**
 	 * @param qteStock
 	 * @param unVisiteur
@@ -58,5 +61,19 @@ public class Stock {
 	public void setUnMedicament(Medicament unMedicament) {
 		this.unMedicament = unMedicament;
 	}
+	
+	public ArrayList<Stock> getLesStock() {
+		return lesStock;
+	}
+
+	public void setLesTaches(ArrayList<Stock> lesStock) {
+		this.lesStock = lesStock;
+	} 
+
+	public void ajouterTache(Stock unStock){
+		if(lesStock == null) lesStock = new ArrayList<Stock>();
+		lesStock.add(unStock);
+		}
+	
 	}
 

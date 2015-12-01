@@ -65,7 +65,6 @@ public class JIFMedecinListeCol extends JInternalFrame implements ActionListener
 			data[i][0] = unMedecin.getCodeMed();
 			data[i][1] = unMedecin.getNom();
 			data[i][2] = unMedecin.getPrenom();
-			data[i][3] = unMedecin.getLaLocalite().getVille() ;
 			i++;
 			}
 		String[] columnNames = {"Code", "Nom","Prenom","Ville"};
