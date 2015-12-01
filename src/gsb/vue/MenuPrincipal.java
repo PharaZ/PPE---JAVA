@@ -36,8 +36,8 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 	protected JMenuBar mbar;
 	protected JMenu mMedecins;
 	protected JMenu mMedicaments;
-
-	JMenu mVisites;
+	protected JMenu mStock;
+	protected JMenu mVisites;
 
 	/**
 	 * 
@@ -54,7 +54,6 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 		setTitle("GSB");
 		setSize(500, 400);
 		
-		
 
 		// Ajout d'une barre de menus � la fen�tre
 		mbar = new JMenuBar();
@@ -65,7 +64,16 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 		JMenuItem mC2 = new JMenuItem("Liste Medecins");
 		mC2.addActionListener(this);
 		mMedecins.add(mC2);
-
+		
+		//Ajout d'une barre de menu stock a la fenetre
+		mStock = new JMenu("Stock");
+		JMenuItem mU1 = new JMenuItem("Consultation Stock");
+		mU1.addActionListener(this); // installation d'un �couteur d'action
+		mStock.add(mU1);
+		JMenuItem mU2 = new JMenuItem("Ajout Stock");
+		mU2.addActionListener(this);
+		mStock.add(mU2);
+		
 		mMedicaments = new JMenu("Medicaments");
 		JMenuItem mE1 = new JMenuItem("Consultation Medicament");
 		mE1.addActionListener(this); // installation d'un �couteur d'action
@@ -83,6 +91,7 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 		mVisites.add(mA2);
 
 		mbar.add(mMedecins);
+		mbar.add(mStock);
 		mbar.add(mMedicaments);
 		mbar.add(mVisites);
 		setJMenuBar(mbar);
