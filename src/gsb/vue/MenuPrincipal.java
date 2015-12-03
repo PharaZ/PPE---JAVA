@@ -123,7 +123,7 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 				ouvrirFenetre(new JIFAjoutStock());
 
 			} else if (ChoixOption.equals("Consultation Stock")) {
-				ouvrirFenetre(new JIFListeStock(this));
+				ouvrirFenetre(new JIFListeStock());
 			}
 
 		}
