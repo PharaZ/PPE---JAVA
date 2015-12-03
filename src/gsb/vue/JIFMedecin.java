@@ -108,8 +108,6 @@ public class JIFMedecin extends JInternalFrame  {
         JTnom.setText(unMedecin.getNom());
         JTprenom.setText(unMedecin.getPrenom());
         JTadresse.setText(unMedecin.getAdresse());    
-        JTcp.setText(unMedecin.getLaLocalite().getCodePostal());
-        JTville.setText(unMedecin.getLaLocalite().getVille());
         JTtelephone.setText(unMedecin.getTelephone());
         JTpotentiel.setText(unMedecin.getPotentiel());
         JTspecialite.setText(unMedecin.getSpecialite());
